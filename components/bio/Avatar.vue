@@ -25,8 +25,7 @@
 }
 .a-name{
   white-space: nowrap;
-  color: var(--c-blue-1);
-  opacity: 80%;
+  color: #262B32bb;
   padding-right: var(--padding);
   font-size: 1.8rem;
   font-weight: 600;
