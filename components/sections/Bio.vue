@@ -5,7 +5,7 @@
     </div>
     <div class="a-bg">
       <div class="container">
-        <div :class="$device.isMobile ? 'a-container-m' : 'a-container'">
+        <div class="a-container">
           <div class="a-summary">
             Ich bin freiberuflicher Webentwickler und ich begleite Unternehmen bei der Konzeption und Umsetzung ihrer digitalen Strategie.
           </div>
@@ -26,11 +26,6 @@
   padding: 5rem 7rem;
 }
 
-.a-container-m{
-  padding: 5rem 0;
-}
-
-
 .a-summary{
   padding: 1rem 0 1rem 3rem;
   border-left: 5px solid var(--c-purple-1);
@@ -42,6 +37,9 @@
 @media only screen and (max-width: 600px) {
   .a-summary {
     font-size: 1.8rem;
+  }
+  .a-container{
+    padding: 5rem 0rem;
   }
 }
 </style>

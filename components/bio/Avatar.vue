@@ -2,7 +2,7 @@
   <div class="a-avatar">
     <div class="a-flex">
       <span>
-        <img :height="imgHeight" src="~/assets/img/avatar.png" alt="Sergei Gaponik">
+        <img class="a-img" src="~/assets/img/avatar.png" alt="Sergei Gaponik">
       </span>
       <span class="a-name">
         Sergei Gaponik
@@ -10,22 +10,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  computed: {
-    imgHeight(){
-      if(this.$device.isDesktop)
-        return "100px"
-      if(this.$device.isTablet)
-        return "80px"
-      if(this.$device.isMobile)
-        return "60px"
-    }
-  }
-}
-</script>
-
 
 <style scoped>
 .a-avatar{
@@ -46,5 +30,21 @@ export default {
   padding-right: var(--padding);
   font-size: 1.8rem;
   font-weight: 600;
+}
+
+.a-img{
+  height: 100px;
+}
+
+@media only screen and (max-width: 900px) {
+  .a-img{
+    height: 80px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .a-img{
+    height: 60px;
+  }
 }
 </style>

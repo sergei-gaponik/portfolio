@@ -2,15 +2,15 @@
   <div class="a-bg">
     <div class="container">
       <div class="a-container">
-        <div :class="['a-content', $device.isMobile ? 'a-content-m' : '']">
+        <div class="a-content">
           <div class="flex-v-s">
             <span class="a-title-1">Full Stack Development</span>
             <span class="a-title-2">E-Commerce</span>
           </div>
           <div class="flex">
-            <jtl :height='$device.isMobile ? 40 : 60' />
-            <shopify :height='$device.isMobile ? 40 : 60' />
-            <ebay :height='$device.isMobile ? 40 : 60' />
+            <jtl class="a-icon" />
+            <shopify class="a-icon"  />
+            <ebay class="a-icon"/>
           </div>
           <div>
             <a href="#bio" class="a-action">
@@ -18,29 +18,14 @@
             </a>
           </div>
         </div>
-        <div :class="$device.isMobile ? 'a-screenshots-m' : 'a-screenshots'">
-          <img src="~/assets/img/device-mockup.png" :height="screenshotHeight"/>
+        <div class="a-screenshots">
+          <img src="~/assets/img/device-mockup.png"  class="a-img"/>
         </div>
       </div>
     </div>
     <div class="a-circle"/>
   </div>
 </template>
-
-<script>
-export default {
-  computed: {
-    screenshotHeight(){
-      if(this.$device.isDesktop)
-        return "600px"
-      if(this.$device.isTablet)
-        return "400px"
-      if(this.$device.isMobile)
-        return "350px"
-    }
-  }
-}
-</script>
 
 <style scoped>
 
@@ -82,10 +67,6 @@ export default {
   height: 100vh;
 }
 
-.a-content-m{
-  height: calc(100vh - 250px);
-}
-
 .a-title-1{
   font-size: 3rem;
   color: transparent;
@@ -118,15 +99,40 @@ export default {
   transform: translateY(40%);
 }
 
-.a-screenshots-m{
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 40%);
-}
-
 .a-z3{
   z-index: 3;
+}
+
+.a-icon{
+  height: 60px;
+}
+
+.a-img{
+  height: 600px;
+}
+
+@media only screen and (max-width: 900px) {
+  .a-img{
+    height: 400px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .a-screenshots{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 40%);
+  }
+  .a-icon{
+    height: 40px;
+  }
+  .a-img{
+    height: 350px;
+  }
+  .a-content{
+    height: calc(100vh - 250px);
+  }
 }
 
 </style>
