@@ -1,0 +1,88 @@
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: 1000px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+:root {
+  --default-font: 'Roboto', sans-serif;
+
+  --default-margin: 8px;
+  --margin-2: calc(var(--default-margin) * 2);
+  --margin-4: calc(var(--default-margin) * 4);
+
+  --padding: 3rem;
+  --padding-s: 1rem;
+  --gap-s: 1rem;
+  --gap: 1.5rem;
+
+  --container-x: 1100px;
+
+  --c-blue-1: #262B32;
+  --c-purple-1: #503161;
+  --c-purple-2: #8D57A0;
+  --c-purple-3: #F8F5F9;
+  --c-gray-1: #F2F2F3;
+  --c-gray-2: #343434;
+
+  --border-radius: 0.5rem;
+}
+
+body { 
+  margin: 0 !important;  
+  font-family: var(--default-font);
+}
+
+.container{
+  position: relative;
+  padding: 0 var(--padding);
+  margin: auto;
+  max-width: var(--container-x);
+}
+
+.flex-v, .flex-v-c, .flex-v-s, .flex-v-c-s{
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap)
+}
+
+.flex, .flex-c, .flex-c-s, .flex-s{
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap)
+}
+
+.flex-v-s, .flex-v-c-s, .flex-s, .flex-c-s{
+  gap: var(--gap-s)
+}
+
+
+h2, .h2 {
+  font-weight: 600;
+  font-size: 3rem;
+  color: var(--c-blue-1);
+  padding: 2rem 0;
+  margin: 0;
+}
+
+.bold{
+  font-weight: 600;
+}
